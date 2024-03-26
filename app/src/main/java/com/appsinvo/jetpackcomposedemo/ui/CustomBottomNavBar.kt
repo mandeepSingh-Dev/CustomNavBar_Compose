@@ -118,6 +118,9 @@ fun CustomBottomNavBar() {
 
 
 
+
+
+
     Column(modifier = Modifier
         .fillMaxSize()
         .background(Color.Blue)
@@ -134,7 +137,7 @@ fun CustomBottomNavBar() {
         ) {
                Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
                   .width(row1Animation)
-                  .background(Brush.linearGradient(listOf(Color.Red, Color.Green)), shape = RoundedCornerShape(20.dp))
+                  .background(Brush.linearGradient(if(row1TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)), shape = RoundedCornerShape(20.dp))
                    .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
                   .clickable {
                       row1Width = mainWidth
@@ -157,6 +160,10 @@ fun CustomBottomNavBar() {
           }
              Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
               .width(row2Animation)
+                 .background(
+                     Brush.linearGradient(if(row2TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
+                     shape = RoundedCornerShape(20.dp)
+                 )
               .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
               .clickable {
                   row1Width = restWidth
@@ -182,7 +189,7 @@ fun CustomBottomNavBar() {
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
               .width(row3Animation)
               .background(
-                  Brush.linearGradient(listOf(Color.Red, Color.Green)),
+                  Brush.linearGradient(if(row3TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
                   shape = RoundedCornerShape(20.dp)
               )
               .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
@@ -208,7 +215,7 @@ fun CustomBottomNavBar() {
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
               .width(row4Animation)
               .background(
-                  Brush.linearGradient(listOf(Color.Red, Color.Green)),
+                  Brush.linearGradient(if(row4TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
                   shape = RoundedCornerShape(20.dp)
               )
               .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
@@ -235,7 +242,7 @@ fun CustomBottomNavBar() {
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
               .width(row5Animation)
               .background(
-                  Brush.linearGradient(listOf(Color.Red, Color.Green)),
+                  brush = Brush.linearGradient(if(row5TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
                   shape = RoundedCornerShape(20.dp)
               )
               .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
