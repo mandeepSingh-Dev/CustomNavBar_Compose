@@ -1,6 +1,7 @@
 package com.appsinvo.jetpackcomposedemo.ui
 
 import android.util.Log
+import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -117,22 +118,32 @@ fun AnimateScaleIcons() {
 
         }).value
 
-    Box(modifier = Modifier.fillMaxSize().clickable {
-        if(scale == 1f) {
-            scale = 0f
-            scale2 = 1f
-        } else {
-            scale = 1f
-            scale2 = 0f
-        }
-    }) {
+    var iconSize by remember {
+        mutableStateOf(50)
+    }
+
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .clickable {
+            if (scale == 1f) {
+                scale = 0f
+                scale2 = 1f
+            } else {
+                scale = 1f
+                scale2 = 0f
+            }
+
+        }) {
 
         Icon(imageVector = Icons.Rounded.LocationOn , contentDescription ="",
-            modifier = Modifier.size(500.dp).align(Alignment.Center).scale(scaleAnim)
+            modifier = Modifier.size(100.dp).align(Alignment.Center).scale(scaleAnim).animateContentSize()
         )
 
         Icon(imageVector = Icons.Rounded.DateRange, contentDescription ="",
-            modifier = Modifier.size(100.dp).align(Alignment.Center).scale(scaleAnim2)
+            modifier = Modifier
+                .size(100.dp)
+                .align(Alignment.Center)
+                .scale(scaleAnim2)
         )
 
 
