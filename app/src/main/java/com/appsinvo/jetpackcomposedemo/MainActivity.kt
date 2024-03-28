@@ -49,6 +49,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.appsinvo.jetpackcomposedemo.ui.AnimBottomNavBar
+import com.appsinvo.jetpackcomposedemo.ui.AnimateIconsComponent
+import com.appsinvo.jetpackcomposedemo.ui.AnimateScaleIcons
 import com.appsinvo.jetpackcomposedemo.ui.CustomBottomNavBar
 import com.appsinvo.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
 import kotlinx.coroutines.CoroutineScope
@@ -68,7 +70,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.Green
                 ) {
-                    CustomBottomNavBar()
+                    AnimateScaleIcons()
                 }
             }
         }
