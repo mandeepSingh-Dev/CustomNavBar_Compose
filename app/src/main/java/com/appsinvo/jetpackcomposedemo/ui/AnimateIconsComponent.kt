@@ -4,10 +4,7 @@ import android.util.Log
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.Icon
@@ -53,7 +50,7 @@ fun AnimateIconsComponent() {
 
 
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxWidth()) {
         
         Icon(imageVector = if(icon1RotateAngle == 0f) Icons.Rounded.Create else Icons.Rounded.CheckCircle, contentDescription = "",
             modifier = Modifier
@@ -123,7 +120,7 @@ fun AnimateScaleIcons() {
     }
 
     Box(modifier = Modifier
-        .fillMaxSize()
+        .fillMaxWidth()
         .clickable {
             if (scale == 1f) {
                 scale = 0f

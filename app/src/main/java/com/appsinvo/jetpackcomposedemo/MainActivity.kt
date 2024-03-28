@@ -70,7 +70,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.Green
                 ) {
-                    AnimateScaleIcons()
+                    Column(modifier = Modifier.fillMaxSize()) {
+                       Box(modifier = Modifier.weight(1f)) {
+                           CustomBottomNavBar()
+                       }
+                        Box(modifier = Modifier.weight(1f)) {
+                           AnimateIconsComponent()
+                       }
+                        Box(modifier = Modifier.weight(1f)) {
+                           AnimateScaleIcons()
+                       }
+                    }
                 }
             }
         }

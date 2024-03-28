@@ -117,12 +117,24 @@ fun CustomBottomNavBar() {
     ) { dp -> row5TextALPHA = if (dp == mainWidth.dp) 1f else 0f }.value
 
 
-
-
+    var row1Color by remember {
+        mutableStateOf(listOf(Color.Green, Color.Magenta))
+    }
+    var row2Color by remember {
+        mutableStateOf(listOf(Color.Transparent, Color.Transparent))
+    }
+    var row3Color by remember {
+        mutableStateOf(listOf(Color.Transparent, Color.Transparent))
+    }
+    var row4Color by remember {
+        mutableStateOf(listOf(Color.Transparent, Color.Transparent))
+    }
+    var row5Color by remember {
+        mutableStateOf(listOf(Color.Transparent, Color.Transparent))
+    }
 
 
     Column(modifier = Modifier
-        .fillMaxSize()
         .background(Color.Blue)
     )
     {
@@ -136,16 +148,26 @@ fun CustomBottomNavBar() {
 
         ) {
                Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
-                  .width(row1Animation)
-                  .background(Brush.linearGradient(if(row1TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)), shape = RoundedCornerShape(20.dp))
+                   .width(row1Animation)
+                   .background(
+                       Brush.linearGradient(
+                           row1Color
+                       ), shape = RoundedCornerShape(20.dp)
+                   )
                    .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
-                  .clickable {
-                      row1Width = mainWidth
-                      row2Width = restWidth
-                      row3Width = restWidth
-                      row4Width = restWidth
-                      row5Width = restWidth
-                  })
+                   .clickable {
+                       row1Width = mainWidth
+                       row2Width = restWidth
+                       row3Width = restWidth
+                       row4Width = restWidth
+                       row5Width = restWidth
+
+                       row1Color = listOf(Color.Green, Color.Magenta)
+                       row2Color = listOf(Color.Transparent, Color.Transparent)
+                       row3Color = listOf(Color.Transparent, Color.Transparent)
+                       row4Color = listOf(Color.Transparent, Color.Transparent)
+                       row5Color = listOf(Color.Transparent, Color.Transparent)
+                   })
               {
                   Row() {
                       Icon(imageVector = Icons.Rounded.Edit, contentDescription = "Email")
@@ -159,20 +181,28 @@ fun CustomBottomNavBar() {
                   }
           }
              Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
-              .width(row2Animation)
+                 .width(row2Animation)
                  .background(
-                     Brush.linearGradient(if(row2TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
+                     Brush.linearGradient(
+                         row2Color
+                     ),
                      shape = RoundedCornerShape(20.dp)
                  )
-              .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
-              .clickable {
-                  row1Width = restWidth
-                  row2Width = mainWidth
-                  row3Width = restWidth
-                  row4Width = restWidth
-                  row5Width = restWidth
+                 .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
+                 .clickable {
+                     row1Width = restWidth
+                     row2Width = mainWidth
+                     row3Width = restWidth
+                     row4Width = restWidth
+                     row5Width = restWidth
 
-              })
+                     row1Color = listOf(Color.Transparent, Color.Transparent)
+                     row2Color = listOf(Color.Green, Color.Magenta)
+                     row3Color = listOf(Color.Transparent, Color.Transparent)
+                     row4Color = listOf(Color.Transparent, Color.Transparent)
+                     row5Color = listOf(Color.Transparent, Color.Transparent)
+
+                 })
               {
               Row() {
                   Icon(imageVector = Icons.Rounded.Edit, contentDescription = "Email")
@@ -187,19 +217,27 @@ fun CustomBottomNavBar() {
               }
               }
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
-              .width(row3Animation)
-              .background(
-                  Brush.linearGradient(if(row3TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
-                  shape = RoundedCornerShape(20.dp)
-              )
-              .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
-              .clickable {
-                  row1Width = restWidth
-                  row2Width = restWidth
-                  row3Width = mainWidth
-                  row4Width = restWidth
-                  row5Width = restWidth
-              })
+                  .width(row3Animation)
+                  .background(
+                      Brush.linearGradient(
+                          row3Color
+                      ),
+                      shape = RoundedCornerShape(20.dp)
+                  )
+                  .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
+                  .clickable {
+                      row1Width = restWidth
+                      row2Width = restWidth
+                      row3Width = mainWidth
+                      row4Width = restWidth
+                      row5Width = restWidth
+
+                      row1Color = listOf(Color.Transparent, Color.Transparent)
+                      row2Color = listOf(Color.Transparent, Color.Transparent)
+                      row3Color = listOf(Color.Green, Color.Magenta)
+                      row4Color = listOf(Color.Transparent, Color.Transparent)
+                      row5Color = listOf(Color.Transparent, Color.Transparent)
+                  })
               {
               Row() {
                   Icon(imageVector = Icons.Rounded.Edit, contentDescription = "Email")
@@ -213,20 +251,28 @@ fun CustomBottomNavBar() {
               }
           }
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
-              .width(row4Animation)
-              .background(
-                  Brush.linearGradient(if(row4TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
-                  shape = RoundedCornerShape(20.dp)
-              )
-              .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
+                  .width(row4Animation)
+                  .background(
+                      Brush.linearGradient(
+                          row4Color
+                      ),
+                      shape = RoundedCornerShape(20.dp)
+                  )
+                  .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
 
-              .clickable {
-                  row1Width = restWidth
-                  row2Width = restWidth
-                  row3Width = restWidth
-                  row4Width = mainWidth
-                  row5Width = restWidth
-              })
+                  .clickable {
+                      row1Width = restWidth
+                      row2Width = restWidth
+                      row3Width = restWidth
+                      row4Width = mainWidth
+                      row5Width = restWidth
+
+                      row1Color = listOf(Color.Transparent, Color.Transparent)
+                      row2Color = listOf(Color.Transparent, Color.Transparent)
+                      row3Color = listOf(Color.Transparent, Color.Transparent)
+                      row4Color = listOf(Color.Green, Color.Magenta)
+                      row5Color = listOf(Color.Transparent, Color.Transparent)
+                  })
               {
               Row() {
                   Icon(imageVector = Icons.Rounded.Edit, contentDescription = "Email")
@@ -240,19 +286,27 @@ fun CustomBottomNavBar() {
               }
           }
               Row(horizontalArrangement = Arrangement.Center, modifier = Modifier
-              .width(row5Animation)
-              .background(
-                  brush = Brush.linearGradient(if(row5TextALPHA == 1f) listOf(Color.Red, Color.Green)else listOf(Color.Transparent,Color.Transparent)),
-                  shape = RoundedCornerShape(20.dp)
-              )
-              .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
-              .clickable {
-                  row1Width = restWidth
-                  row2Width = restWidth
-                  row3Width = restWidth
-                  row4Width = restWidth
-                  row5Width = mainWidth
-              })
+                  .width(row5Animation)
+                  .background(
+                      brush = Brush.linearGradient(
+                          row5Color
+                      ),
+                      shape = RoundedCornerShape(20.dp)
+                  )
+                  .padding(top = 4.dp, bottom = 4.dp, start = 2.dp, end = 2.dp)
+                  .clickable {
+                      row1Width = restWidth
+                      row2Width = restWidth
+                      row3Width = restWidth
+                      row4Width = restWidth
+                      row5Width = mainWidth
+
+                      row1Color = listOf(Color.Transparent, Color.Transparent)
+                      row2Color = listOf(Color.Transparent, Color.Transparent)
+                      row3Color = listOf(Color.Transparent, Color.Transparent)
+                      row4Color = listOf(Color.Transparent, Color.Transparent)
+                      row5Color = listOf(Color.Green, Color.Magenta)
+                  })
               {
               Row() {
                   Icon(imageVector = Icons.Rounded.Edit, contentDescription = "Email")
